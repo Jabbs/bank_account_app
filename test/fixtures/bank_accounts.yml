@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  encrypted_account_number: MyString
-  encrypted_account_number_iv: MyString
+chase:
+  name: Chase Checking
+  account_number: 987654321
+  routing_number: 101010101
 
-two:
-  name: MyString
-  encrypted_account_number: MyString
-  encrypted_account_number_iv: MyString
+wells_fargo:
+  name: Wells Fargo Savings
+  account_number: 123456789
+  routing_number: 010101010

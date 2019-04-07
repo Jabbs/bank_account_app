@@ -1,3 +1,3 @@
 class BankAccountSerializer < ActiveModel::Serializer
-  attributes :name, :encrypted_account_number
+  attributes :name, :account_number, :routing_number
 end

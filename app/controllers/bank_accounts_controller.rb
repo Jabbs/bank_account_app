@@ -61,7 +61,7 @@ class BankAccountsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def bank_account_params
-    params.require(:bank_account).permit(:name)
+    params.require(:bank_account).permit(:name, :account_number, :routing_number)
   end
 
   # TODO: only show those for a particular user, perhaps w pundit

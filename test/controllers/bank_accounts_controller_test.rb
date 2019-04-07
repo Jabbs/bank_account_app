@@ -1,7 +1,39 @@
 require 'test_helper'
 
 class BankAccountsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @bank_account = bank_accounts(:chase)
+    sign_in users(:one)
+  end
+
+  test "should get index" do
+    get bank_accounts_url, as: :json
+    assert_response :success
+  end
+
+  test "should create bank_account" do
+    assert_difference('BankAccount.count') do
+      post bank_accounts_url, params: { bank_account: { name: "Bank of America Checking" } }, as: :json
+    end
+
+    assert_response 201
+  end
+
+  test "should show bank_account" do
+    get bank_account_url(@bank_account), as: :json
+    assert_response :success
+  end
+
+  test "should update bank_account" do
+    patch bank_account_url(@bank_account), params: { bank_account: { name: "Bank of America Savings" } }, as: :json
+    assert_response 200
+  end
+
+  test "should destroy bank_account" do
+    assert_difference('BankAccount.count', -1) do
+      delete bank_account_url(@bank_account), as: :json
+    end
+
+    assert_response 204
+  end
 end
